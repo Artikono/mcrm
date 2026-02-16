@@ -50,7 +50,7 @@ export function AddBusinessForm() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full py-4 px-4 rounded-xl border-2 border-dashed border-gray-300 text-gray-600 font-medium hover:border-gray-400 hover:text-gray-700 transition-colors flex items-center justify-center gap-2"
+        className="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium hover:from-blue-600 hover:to-blue-700 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
       >
         <svg
           className="w-5 h-5"
@@ -65,7 +65,7 @@ export function AddBusinessForm() {
             d="M12 4v16m8-8H4"
           />
         </svg>
-        הוסף עסק
+        הוסף עסק חדש
       </button>
     );
   }

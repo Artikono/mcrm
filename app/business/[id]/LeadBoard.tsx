@@ -92,30 +92,73 @@ export function LeadBoard({
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-8 h-8 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </div>
-            <h2 className="text-lg font-medium text-gray-900 mb-1">
-              {selectedStatus === 'ALL' ? 'אין לידים עדיין' : 'אין לידים בסטטוס זה'}
-            </h2>
-            <p className="text-gray-500 text-sm">
-              {selectedStatus === 'ALL'
-                ? 'הוסף את הליד הראשון שלך כדי להתחיל'
-                : 'נסה לבחור פילטר אחר'}
-            </p>
+          <div className="text-center py-16 px-6">
+            {selectedStatus === 'ALL' ? (
+              <>
+                {/* Friendly illustration */}
+                <div className="relative w-32 h-32 mx-auto mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full"></div>
+                  <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-14 h-14 text-blue-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                      />
+                    </svg>
+                  </div>
+                  {/* Decorative dots */}
+                  <div className="absolute -top-1 right-4 w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="absolute top-6 -left-1 w-2 h-2 bg-green-400 rounded-full"></div>
+                  <div className="absolute -bottom-1 right-8 w-2 h-2 bg-pink-400 rounded-full"></div>
+                </div>
+
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  בואו נתחיל! 🎉
+                </h2>
+                <p className="text-gray-500 mb-6 max-w-xs mx-auto">
+                  הוסף את הליד הראשון שלך ותתחיל לעקוב אחרי הלקוחות הפוטנציאליים
+                </p>
+
+                {/* Arrow pointing to FAB */}
+                <div className="flex items-center justify-center gap-2 text-blue-600 animate-bounce">
+                  <span className="text-sm font-medium">לחץ על הכפתור</span>
+                  <svg className="w-5 h-5 rotate-[-135deg]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-10 h-10 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-lg font-medium text-gray-900 mb-1">
+                  אין לידים בסטטוס זה
+                </h2>
+                <p className="text-gray-500 text-sm">
+                  נסה לבחור פילטר אחר או הוסף לידים חדשים
+                </p>
+              </>
+            )}
           </div>
         )}
       </main>
