@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
+/* Base styles */
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Mobile-first touch targets */
+button, a {
+  @apply touch-manipulation;
+}
+
+/* Form inputs - larger for mobile */
+input, select, textarea {
+  @apply text-base;
+}
+
+/* iOS input zoom fix */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
