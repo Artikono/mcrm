@@ -54,7 +54,7 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
       setIsOpen(false);
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to create lead');
+      setError(err instanceof Error ? err.message : 'שגיאה ביצירת הליד');
     } finally {
       setLoading(false);
     }
@@ -64,8 +64,8 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center z-20"
-        aria-label="Add Lead"
+        className="fixed bottom-6 left-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 active:scale-95 transition-all flex items-center justify-center z-20"
+        aria-label="הוסף ליד"
       >
         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -78,7 +78,7 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
     <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center">
       <div className="bg-white w-full sm:max-w-md sm:rounded-xl rounded-t-xl max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Add New Lead</h2>
+          <h2 className="text-lg font-semibold text-gray-900">הוספת ליד חדש</h2>
           <button
             onClick={() => {
               setIsOpen(false);
@@ -95,7 +95,7 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
         <form onSubmit={handleSubmit} className="p-4 space-y-4">
           <div>
             <label htmlFor="leadName" className="block text-sm font-medium text-gray-700 mb-1">
-              Name <span className="text-red-500">*</span>
+              שם <span className="text-red-500">*</span>
             </label>
             <input
               id="leadName"
@@ -103,14 +103,14 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              placeholder="Full name"
+              placeholder="שם מלא"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
           </div>
 
           <div>
             <label htmlFor="leadPhone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone <span className="text-red-500">*</span>
+              טלפון <span className="text-red-500">*</span>
             </label>
             <input
               id="leadPhone"
@@ -118,14 +118,15 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
-              placeholder="+1 234 567 8900"
+              placeholder="050-1234567"
+              dir="ltr"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
           </div>
 
           <div>
             <label htmlFor="leadInstagram" className="block text-sm font-medium text-gray-700 mb-1">
-              Instagram
+              אינסטגרם
             </label>
             <input
               id="leadInstagram"
@@ -133,33 +134,34 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
               value={instagram}
               onChange={(e) => setInstagram(e.target.value)}
               placeholder="@username"
+              dir="ltr"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
           </div>
 
           <div>
             <label htmlFor="leadTreatment" className="block text-sm font-medium text-gray-700 mb-1">
-              Treatment Type
+              סוג טיפול
             </label>
             <input
               id="leadTreatment"
               type="text"
               value={treatmentType}
               onChange={(e) => setTreatmentType(e.target.value)}
-              placeholder="e.g. Gel Nails, Facial"
+              placeholder="לדוגמה: ג'ל, טיפול פנים"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
           </div>
 
           <div>
             <label htmlFor="leadNotes" className="block text-sm font-medium text-gray-700 mb-1">
-              Notes
+              הערות
             </label>
             <textarea
               id="leadNotes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Any additional notes..."
+              placeholder="הערות נוספות..."
               rows={3}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
             />
@@ -180,14 +182,14 @@ export function AddLeadForm({ businessId }: AddLeadFormProps) {
               }}
               className="flex-1 py-3 px-4 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
             >
-              Cancel
+              ביטול
             </button>
             <button
               type="submit"
               disabled={loading || !name.trim() || !phone.trim()}
               className="flex-1 py-3 px-4 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {loading ? 'Adding...' : 'Add Lead'}
+              {loading ? 'מוסיף...' : 'הוסף ליד'}
             </button>
           </div>
         </form>

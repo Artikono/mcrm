@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Heebo } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const heebo = Heebo({
+  subsets: ['hebrew', 'latin'],
+  variable: '--font-heebo',
 });
 
 export const metadata: Metadata = {
-  title: 'Mini CRM - Lead Management',
-  description: 'Simple lead management system for small businesses',
+  title: 'Mini CRM - ניהול לידים',
+  description: 'מערכת ניהול לידים פשוטה לעסקים קטנים',
 };
 
 export const viewport: Viewport = {
@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased bg-gray-50 min-h-screen`}>
+    <html lang="he" dir="rtl">
+      <body className={`${heebo.variable} font-sans antialiased bg-gray-50 min-h-screen`}>
         {children}
       </body>
     </html>

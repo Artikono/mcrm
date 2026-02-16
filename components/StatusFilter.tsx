@@ -29,11 +29,11 @@ export function StatusFilter({ selected, onSelect, counts }: StatusFilterProps) 
                 : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300'
             )}
           >
-            {status === 'ALL' ? 'All' : STATUS_LABELS[status]}
+            {status === 'ALL' ? 'הכל' : STATUS_LABELS[status]}
             {counts && (
               <span
                 className={cn(
-                  'ml-1.5 px-1.5 py-0.5 rounded text-xs',
+                  'mr-1.5 px-1.5 py-0.5 rounded text-xs',
                   isSelected ? 'bg-white/20' : 'bg-gray-100'
                 )}
               >

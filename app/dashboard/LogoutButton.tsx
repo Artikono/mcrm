@@ -18,7 +18,7 @@ export function LogoutButton() {
       onClick={handleLogout}
       className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
     >
-      Logout
+      התנתקות
     </button>
   );
 }

@@ -44,7 +44,7 @@ export default function LoginPage() {
       router.push('/dashboard');
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'אירעה שגיאה');
     } finally {
       setLoading(false);
     }
@@ -55,7 +55,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-gray-900">Mini CRM</h1>
-          <p className="text-gray-600 mt-2">Lead Management System</p>
+          <p className="text-gray-600 mt-2">מערכת ניהול לידים</p>
         </div>
 
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
@@ -69,7 +69,7 @@ export default function LoginPage() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              Login
+              התחברות
             </button>
             <button
               type="button"
@@ -80,14 +80,14 @@ export default function LoginPage() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              Register
+              הרשמה
             </button>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
+                אימייל
               </label>
               <input
                 id="email"
@@ -97,12 +97,13 @@ export default function LoginPage() {
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 placeholder="you@example.com"
+                dir="ltr"
               />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                Password
+                סיסמה
               </label>
               <input
                 id="password"
@@ -113,6 +114,7 @@ export default function LoginPage() {
                 minLength={6}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 placeholder="••••••••"
+                dir="ltr"
               />
             </div>
 
@@ -145,12 +147,12 @@ export default function LoginPage() {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     />
                   </svg>
-                  {mode === 'login' ? 'Logging in...' : 'Creating account...'}
+                  {mode === 'login' ? 'מתחבר...' : 'יוצר חשבון...'}
                 </span>
               ) : mode === 'login' ? (
-                'Login'
+                'התחברות'
               ) : (
-                'Create Account'
+                'יצירת חשבון'
               )}
             </button>
           </form>

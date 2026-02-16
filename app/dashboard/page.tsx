@@ -29,7 +29,7 @@ export default async function DashboardPage() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900">My Businesses</h1>
+          <h1 className="text-xl font-bold text-gray-900">העסקים שלי</h1>
           <LogoutButton />
         </div>
       </header>
@@ -61,10 +61,10 @@ export default async function DashboardPage() {
               </svg>
             </div>
             <h2 className="text-lg font-medium text-gray-900 mb-1">
-              No businesses yet
+              אין עסקים עדיין
             </h2>
             <p className="text-gray-500 text-sm">
-              Create your first business to start tracking leads
+              צור את העסק הראשון שלך כדי להתחיל לעקוב אחר לידים
             </p>
           </div>
         )}

@@ -35,7 +35,7 @@ export function FollowUpSection({ leads, businessId }: FollowUpSectionProps) {
           />
         </svg>
         <h3 className="font-semibold text-orange-800">
-          Needs Follow-Up ({followUpLeads.length})
+          דרוש מעקב ({followUpLeads.length})
         </h3>
       </div>
       <div className="space-y-2">
@@ -49,16 +49,16 @@ export function FollowUpSection({ leads, businessId }: FollowUpSectionProps) {
               <p className="font-medium text-gray-900 truncate">{lead.name}</p>
               <p className="text-sm text-gray-500 truncate">{lead.phone}</p>
             </div>
-            <span className="text-xs text-orange-600 whitespace-nowrap ml-2">
+            <span className="text-xs text-orange-600 whitespace-nowrap mr-2">
               {lead.next_followup_at
-                ? `Due: ${formatRelativeTime(lead.next_followup_at)}`
+                ? `עד: ${formatRelativeTime(lead.next_followup_at)}`
                 : formatRelativeTime(lead.created_at)}
             </span>
           </Link>
         ))}
         {followUpLeads.length > 5 && (
           <p className="text-sm text-orange-600 text-center pt-2">
-            +{followUpLeads.length - 5} more leads need attention
+            +{followUpLeads.length - 5} לידים נוספים דורשים תשומת לב
           </p>
         )}
       </div>

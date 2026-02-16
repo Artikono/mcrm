@@ -39,30 +39,30 @@ export function LeadBoard({
             <div className="flex items-center gap-3">
               <Link
                 href="/dashboard"
-                className="p-2 -ml-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100"
+                className="p-2 -mr-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
               <h1 className="text-xl font-bold text-gray-900 truncate">
                 {business.name}
               </h1>
             </div>
-            <div className="text-right">
+            <div className="text-left">
               <div className="text-2xl font-bold text-gray-900">{monthlyTotal}</div>
-              <div className="text-xs text-gray-500">leads this month</div>
+              <div className="text-xs text-gray-500">לידים החודש</div>
             </div>
           </div>
 
           {/* Monthly Stats Bar */}
           <div className="flex items-center gap-4 py-2 px-3 bg-gray-50 rounded-lg text-sm">
             <div className="flex items-center gap-1">
-              <span className="text-gray-500">Conversion:</span>
+              <span className="text-gray-500">המרה:</span>
               <span className="font-semibold text-green-600">{conversionRate}%</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-gray-500">Scheduled:</span>
+              <span className="text-gray-500">נקבעו:</span>
               <span className="font-semibold text-gray-900">{counts.APPOINTMENT_SCHEDULED}</span>
             </div>
           </div>
@@ -109,12 +109,12 @@ export function LeadBoard({
               </svg>
             </div>
             <h2 className="text-lg font-medium text-gray-900 mb-1">
-              {selectedStatus === 'ALL' ? 'No leads yet' : 'No leads with this status'}
+              {selectedStatus === 'ALL' ? 'אין לידים עדיין' : 'אין לידים בסטטוס זה'}
             </h2>
             <p className="text-gray-500 text-sm">
               {selectedStatus === 'ALL'
-                ? 'Add your first lead to get started'
-                : 'Try selecting a different filter'}
+                ? 'הוסף את הליד הראשון שלך כדי להתחיל'
+                : 'נסה לבחור פילטר אחר'}
             </p>
           </div>
         )}

@@ -67,11 +67,11 @@ export const LEAD_STATUSES: LeadStatus[] = [
 ];
 
 export const STATUS_LABELS: Record<LeadStatus, string> = {
-  NEW: 'New',
-  CONTACTED: 'Contacted',
-  APPOINTMENT_SCHEDULED: 'Appointment Scheduled',
-  NOT_RELEVANT: 'Not Relevant',
-  NO_RESPONSE: 'No Response',
+  NEW: 'חדש',
+  CONTACTED: 'נוצר קשר',
+  APPOINTMENT_SCHEDULED: 'נקבע תור',
+  NOT_RELEVANT: 'לא רלוונטי',
+  NO_RESPONSE: 'אין מענה',
 };
 
 export const STATUS_COLORS: Record<LeadStatus, string> = {

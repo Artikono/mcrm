@@ -32,7 +32,7 @@ export function getInstagramLink(handle: string): string {
 // Format date for display
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString('he-IL', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
@@ -45,10 +45,10 @@ export function formatRelativeTime(dateString: string): string {
   const now = new Date();
   const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 
-  if (diffInDays === 0) return 'Today';
-  if (diffInDays === 1) return 'Yesterday';
-  if (diffInDays < 7) return `${diffInDays} days ago`;
-  if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
+  if (diffInDays === 0) return 'היום';
+  if (diffInDays === 1) return 'אתמול';
+  if (diffInDays < 7) return `לפני ${diffInDays} ימים`;
+  if (diffInDays < 30) return `לפני ${Math.floor(diffInDays / 7)} שבועות`;
   return formatDate(dateString);
 }
 

@@ -18,7 +18,7 @@ export function BusinessCard({ business }: BusinessCardProps) {
         {business.name}
       </h3>
       <p className="text-sm text-gray-500">
-        Created {formatDate(business.created_at)}
+        נוצר ב-{formatDate(business.created_at)}
       </p>
     </Link>
   );

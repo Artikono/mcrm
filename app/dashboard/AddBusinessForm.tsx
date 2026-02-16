@@ -40,7 +40,7 @@ export function AddBusinessForm() {
       setIsOpen(false);
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to create business');
+      setError(err instanceof Error ? err.message : 'שגיאה ביצירת העסק');
     } finally {
       setLoading(false);
     }
@@ -65,7 +65,7 @@ export function AddBusinessForm() {
             d="M12 4v16m8-8H4"
           />
         </svg>
-        Add Business
+        הוסף עסק
       </button>
     );
   }
@@ -80,14 +80,14 @@ export function AddBusinessForm() {
           htmlFor="businessName"
           className="block text-sm font-medium text-gray-700 mb-1"
         >
-          Business Name
+          שם העסק
         </label>
         <input
           id="businessName"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="e.g. My Nail Salon"
+          placeholder="לדוגמה: סטודיו לציפורניים"
           autoFocus
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
         />
@@ -109,14 +109,14 @@ export function AddBusinessForm() {
           }}
           className="flex-1 py-3 px-4 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
         >
-          Cancel
+          ביטול
         </button>
         <button
           type="submit"
           disabled={loading || !name.trim()}
           className="flex-1 py-3 px-4 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          {loading ? 'Creating...' : 'Create'}
+          {loading ? 'יוצר...' : 'צור'}
         </button>
       </div>
     </form>
